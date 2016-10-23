@@ -231,11 +231,13 @@ int main(int argc, char **argv)
         usb_ioctl.ifno = 0;
         usb_ioctl.ioctl_code = USBDEVFS_DISCONNECT;
         usb_ioctl.data = NULL;
+        /*
         rc = ioctl(fd, USBDEVFS_IOCTL, &usb_ioctl);
         if (rc == -1 && errno != ENODATA) {
             perror("Error in ioctl (USBDEVFS_DISCONNECT)");
             return 1;
         }
+        */
 
         for (i = 3; i < argc; i += 2) {
             portnum = atoi(argv[i]);
